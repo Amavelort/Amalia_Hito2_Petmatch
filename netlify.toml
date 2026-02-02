@@ -1,4 +1,0 @@
-[[redirects]]
-from = "/*"
-to = "/pages/NotFound.jsx"
-status = 200
