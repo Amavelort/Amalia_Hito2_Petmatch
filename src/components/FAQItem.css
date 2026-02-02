@@ -1,0 +1,42 @@
+.faq {
+  /* Contenedor general de cada ítem del FAQ */
+  /* Separa visualmente cada pregunta con una línea inferior */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.faq__header {
+  /* Botón que contiene la pregunta y la flecha */
+  width: 100%;              /* Ocupa todo el ancho disponible */
+  padding: 16px 0;          /* Espaciado vertical cómodo para clicar */
+  background: none;         /* Elimina el fondo por defecto del botón */
+  border: none;             /* Elimina el borde por defecto */
+  display: flex;            /* Coloca texto y flecha en línea */
+  justify-content: space-between; /* Texto a la izquierda, flecha a la derecha */
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;          /* Cursor de interacción */
+  text-align: left;         /* Alinea el texto de la pregunta a la izquierda */
+}
+
+.faq__arrow {
+  /* Flecha indicadora del estado del acordeón */
+  /* La animación se aplica siempre, la rotación depende de la clase .open */
+  transition: transform 0.2s ease;
+}
+
+.faq__arrow.open {
+  /* Estado abierto: la flecha gira 180º */
+  transform: rotate(180deg);
+}
+
+.faq__content {
+  /* Contenedor del texto de la respuesta */
+  /* Solo se renderiza cuando la pregunta está abierta */
+  padding-bottom: 16px;
+}
+
+.faq__content p {
+  /* Estilo del texto de la respuesta */
+  margin: 0;                /* Elimina márgenes por defecto del <p> */
+  color: #555;              /* Gris suave para no competir con la pregunta */
+}

@@ -1,0 +1,133 @@
+/*Contenedor de la app, el "marco de la web*/
+#root {
+  max-width: 1280px; /*toda la web no puede ser más ancha que eso*/
+  margin: 0 auto; /*centrar la web*/
+  padding: 2rem; /*toda la web tiene un margen interior*/
+}
+
+/*Contenedor de las cards en vista grid. Organiza las catcard en columnas*/
+.grid {
+  display: grid; /*Sus hijos (las CatCard) se colocarán en filas y columnas automáticamente.”*/
+  grid-template-columns: repeat(3, minmax(0, 1fr)); /*“Quiero 3 columnas, que se repartan el espacio por igual, y que no se rompan aunque el contenido sea grande.” Es decir, en el repeat le dices cuántas columnas quieres, si quieres dos, ocuparán el 50% cada columna, si quieres 3 ocuparán un 33% cada una porque 1fr es una fracción. 
+  minmax--> Esta columna puede ser tan pequeña como 0,y tan grande como 1fr.*/
+  gap: 18px;  /*Espacio entre filas y columnas*/
+}
+
+@media (max-width: 980px) { 
+  .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr; /*“En móvil, quiero 1 sola columna (cada card ocupa todo el ancho).”*/
+  }
+}
+
+/*Cabecera de sección (título + botones: GRID/LISTA)*/
+.sectionHeader {
+  display: flex; /*ocupa toda la fila*/
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+/*Contenedor de los botones Grid / Lista*/
+.viewToggle {
+  display: inline-flex; /*ocupa solo lo que necesita para que los botones estén en línea*/
+  gap: 8px;
+}
+
+/*El botón individual para cambiar de modo.*/
+/* Botón inactivo (por defecto) */
+.toggleBtn {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: #f2f2f2; 
+  color: #111;                        
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.06);  /* relieve suave */
+  transition: background 150ms ease, color 150ms ease, transform 150ms ease, box-shadow 150ms ease, border-color 150ms ease;
+}
+
+/* Hover del inactivo: borde verde */
+.toggleBtn:hover {
+  border-color: #2E9C7F;
+  transform: translateY(-1px);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.10);
+  background: #f2f2f2;  /* se mantiene gris */
+  color: #111;
+}
+
+/* Cuando está activo usamos el color corporativo */
+.toggleBtn.is-active {
+  background: #2E9C7F;
+  color: #ffffff;
+  border-color: transparent;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.10); /* opcional: que no quede plano vs el otro */
+  cursor: default; /*Para que el usuario note que el activo “ya está seleccionado”*/
+}
+
+.toggleBtn.is-active:hover {
+  background: #237A64;
+  transform: translateY(-1px);
+  /*para que no tenga hover cuando está activo:*/
+  transform: none;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.10);  
+}
+
+
+
+/*VISTA LISTA*/
+/*Contenedor de las cards en vista lista*/
+.list { /*“Coloca las cards una debajo de otra.”*/
+  display: flex; 
+  flex-direction: column;
+  gap: 18px;
+}
+
+/*Cambia la card para que se adapte a la vista lista*/
+.list .catcard {
+  /*Dentro de la lista, cada card tendrá: imagen a la izquierda texto a la derecha.”*/
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  align-items: stretch; /*Los elementos hijos se estiran para ocupar toda la altura disponible. La imagen y el texto tienen la misma altura*/
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+}
+
+/*"Caja" de la imagen de la card cuando está en modo lista*/
+.list .catcard__media {
+  aspect-ratio: 4 / 3; /*proporción agradable y controlada*/
+  max-height: 240px;   /*evita imágenes gigantes*/
+  overflow: hidden;
+}
+
+/*Imagen dentro de la card en modo lista*/
+.list .catcard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 640px) {
+  .sectionHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /*Ocultamos el selector Grid/Lista en móvil*/
+  .viewToggle {
+    display: none;
+  }
+
+  .list .catcard {
+    grid-template-columns: 1fr;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+
+  }
+}
+

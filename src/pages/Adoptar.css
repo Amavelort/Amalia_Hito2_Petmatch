@@ -1,0 +1,56 @@
+.page {
+  display: flex;
+  justify-content: center;
+  padding: 40px 16px;
+}
+
+.page__card {
+  width: 100%;
+  max-width: 900px;
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.page__title {
+  margin: 0 0 10px;
+  font-size: 28px;
+}
+
+.page__text {
+  margin: 0 0 18px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.page__subtitle {
+  margin: 0 0 10px;
+  font-size: 18px;
+}
+
+.page__list {
+  margin: 0 0 18px;
+  padding-left: 18px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.page__actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+/* CTA principal */
+.page__cta {
+  text-align: center;
+}
+
+.page__note {
+  margin-top: 18px;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.55);
+}

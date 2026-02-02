@@ -1,0 +1,52 @@
+/* Estilos base del botón copiados del botón actual del header: .header__cta */
+.btn {
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 10px 16px;
+  border-radius: 12px;
+  background: #237A64; /* verde del logo */
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+/* Hover: mismo comportamiento que tenía en .header__cta:hover */
+.btn:hover {
+  background: #1E6653;
+  color: #ffffff;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+}
+
+
+/* Accesibilidad: foco visible al navegar con teclado */
+.btn:focus-visible {
+  outline: 3px solid rgba(46, 156, 127, 0.35);
+  outline-offset: 2px;
+}
+
+/*Variante: botón inactivo/secundario*/
+
+.btn--inactive {
+  background: #f2f2f2;
+  color: #111;
+  border: 1px solid rgba(0, 0, 0, 0.12); /* borde suave */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.06); /* relieve ligero */
+}
+
+/* Importante: mantener el hover sin transformar para mayor estabilidad */
+.btn--inactive:hover {
+  background: #f2f2f2;
+  color: #111;
+  border-color: #2E9C7F; 
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.10);
+  transform: translateY(-1px);
+}
+
+/* Foco accesible también en inactivo */
+.btn--inactive:focus-visible {
+  outline: 3px solid rgba(46, 156, 127, 0.35);
+  outline-offset: 2px;
+}

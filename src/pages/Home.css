@@ -1,0 +1,405 @@
+.homeM {
+  /* Fondo general de la Home con degradado suave (verde → blanco → amarillo) */
+  background: linear-gradient(
+    180deg,
+    rgba(46, 156, 127, 0.06) 0%,
+    rgba(255, 255, 255, 1) 30%,
+    rgba(244, 178, 58, 0.06) 100%
+  );
+}
+
+/* CONTENEDOR */
+.homeM__container {
+  /* Contenedor central que limita el ancho del contenido y lo centra */
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* HERO */
+.homeM__hero {
+  /* Espaciado vertical del bloque principal (hero) */
+  padding: 44px 16px 18px;
+}
+
+.homeM__heroBanner {
+  /* “Tarjeta” del hero: fondo, borde, radio y sombra para efecto panel */
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  padding: 28px;
+
+  /* Layout del banner: dos columnas (texto + lateral) */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 26px;
+  align-items: center;
+}
+
+.homeM__heroLeft {
+  /* Columna izquierda del hero (texto + CTAs) */
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.homeM__kicker {
+  /* “Kicker” o frase pequeña superior (marca/tema) */
+  margin: 0 0 6px;
+  color: #2e9c7f;
+  font-weight: 800;
+  font-size: 14px;
+}
+
+.homeM__title {
+  /* Título principal del hero + icono/emoji alineado */
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 0 0 12px;
+  font-size: 38px;
+  line-height: 1.15;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+.homeM__titlePaws {
+  /* Contenedor del emoji/“patitas” junto al título */
+  display: inline-block;
+  flex-direction: column;  
+  gap: 2px;
+  /*color: #f4b23a;*/
+  font-size: 20px;
+  line-height: 1;
+  transform: translateY(-3px);
+}
+
+.homeM__lead {
+  /* Texto descriptivo del hero (párrafo principal) */
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.7;
+  font-size: 16px;
+  max-width: 56ch;
+}
+
+/* Bloque de acción (badges + botones juntos) */
+.homeM__ctaBlock {
+  /* Agrupa badges y botones para que queden “juntos” y ordenados */
+  margin-top: 18px;
+  display: grid;
+  gap: 24px;
+}
+
+/* Badges */
+.homeM__badges {
+  /* Contenedor de chips/badges informativos */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  cursor: default;
+  user-select: none;
+}
+
+.homeM__badge {
+  /* Cada badge/chip (icono + texto) */
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 6px 10px;
+  border-radius: 999px;
+
+  background: rgba(255, 255, 255, 0.85);  /* sutil */
+  border: 1px solid rgba(46, 156, 127, 0.20);
+  color: rgba(0, 0, 0, 0.78);  /* texto oscuro */
+  font-weight: 600;                             
+  font-size: 13px;
+}
+
+.homeM__badgeIcon {
+  /* Tamaño y color del icono dentro del badge */
+  font-size: 16px;
+  line-height: 1;
+  color: #2e9c7f; /*#2e9c7f; tono amarillo*/
+}
+
+/* Botones */
+.homeM__actions {
+  /* Contenedor de botones del hero (Ver gatitos / Cómo adoptar) */
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.homeM__heroRight {
+  /* Columna derecha del hero: separador y alineación central */
+  border-left: 1px solid rgba(0, 0, 0, 0.06);
+  padding-left: 26px;
+  display: grid;
+  gap: 12px;
+  justify-items: center;
+  text-align: center;
+}
+
+.homeM__herocatImg {
+  /* Imagen del hero: se adapta al contenedor sin deformarse */
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+.homeM__heroQuote {
+  /* Frase/cita bajo la imagen del hero */
+  margin: 0;
+  color: rgba(0, 0, 0, 0.55);
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* SECCIONES */
+.homeM__section {
+  /* Padding base para las secciones de la Home */
+  padding: 26px 16px;
+}
+
+.homeM__sectionAlt {
+  /* Variante de sección con más espacio inferior */
+  padding-bottom: 44px;
+}
+
+.homeM__h2 {
+  /* Título de sección (h2) */
+  margin: 0 0 6px;
+  font-size: 24px;
+  color: #1e1e1e;
+}
+
+.homeM__p {
+  /* Párrafo base de sección */
+  margin: 0 0 16px;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+}
+
+.homeM__h3 {
+  /* Subtítulo (h3) dentro de paneles/listas */
+  margin: 0 0 6px;
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.85);
+}
+
+.homeM__p2 {
+  /* Párrafo secundario (texto más pequeño) */
+  margin: 0;
+  color: rgba(0, 0, 0, 0.65);
+  line-height: 1.6;
+  font-size: 14px;
+}
+
+/* PANEL UNIFICADO */
+.homeM__panel {
+  /* Panel reutilizable (tarjeta grande) para secciones */
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+
+.homeM__panelGrid {
+  /* Grid interno del panel (3 columnas en desktop) */
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.homeM__panelItem {
+  /* Item individual dentro del panel (cajas internas) */
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+/* Icono “numerito” */
+.homeM__stepNum {
+  /* “Círculo” del icono/step en la sección “Cómo funciona” */
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 10px;
+
+  background: rgba(46, 156, 127, 0.12);
+  color: #2e9c7f;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+/* QUIÉNES SOMOS */
+.homeM__about {
+  /* Fondo alternativo para la sección “Quiénes somos” */
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.homeM__aboutInner {
+  /* Layout de “Quiénes somos”: texto + stats */
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 18px;
+  align-items: center;
+}
+
+.homeM__aboutText {
+  /* Tarjeta de texto de “Quiénes somos” */
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+
+/* STATS */
+.homeM__stats {
+  /* Grid de estadísticas (2 columnas) */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+.homeM__stat {
+  /* Tarjeta individual de estadística */
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+}
+
+.homeM__statNum {
+  /* Número grande de la estadística */
+  margin: 0 0 4px;
+  font-size: 28px;
+  font-weight: 900;
+  color: #2e9c7f;
+}
+
+.homeM__statLabel {
+  /* Texto descriptivo de la estadística */
+  margin: 0;
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+/* LISTA: Por qué adoptar */
+.homeM__list {
+  /* Lista sin bullets, con grid y separación */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: grid;
+  gap: 12px;
+}
+
+.homeM__listItem {
+  /* Cada item de la lista (icono + texto) */
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 12px;
+  align-items: start;
+
+  padding: 12px;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.02);
+}
+
+.homeM__listIcon {
+  /* Contenedor circular del icono de lista */
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(46, 156, 127, 0.12);
+  color: #2e9c7f;
+  font-weight: 900;
+  font-size: 18px;
+}
+
+.homeM__listText {
+  /* Contenedor del texto de la lista (evita desbordes) */
+  min-width: 0;
+}
+
+/* BANNER FINAL */
+.homeM__banner {
+  /* Padding del banner final con CTA a contacto */
+  padding: 26px 16px 44px;
+}
+
+.homeM__bannerInner {
+  /* Contenedor del banner final (tarjeta) */
+  background: rgba(255, 255, 255, 0.92);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 18px;
+  padding: 18px;
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.06);
+
+  /* Layout del banner: texto + botón */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.homeM__bannerText {
+  /* Contenedor del texto del banner (evita desbordes) */
+  min-width: 0;
+}
+
+.homeM__cta {
+  /* Botón CTA del banner: evita que el texto haga salto de línea */
+  white-space: nowrap;
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .homeM__heroBanner {
+    /* En tablet/móvil: hero en una sola columna */
+    grid-template-columns: 1fr;
+  }
+
+  .homeM__heroRight {
+    /* Se cambia el separador vertical por uno horizontal */
+    border-left: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-left: 0;
+    padding-top: 14px;
+  }
+
+  .homeM__title {
+    /* Título más pequeño en pantallas estrechas */
+    font-size: 30px;
+  }
+
+  .homeM__aboutInner {
+    /* “Quiénes somos” en una sola columna */
+    grid-template-columns: 1fr;
+  }
+
+  .homeM__panelGrid {
+    /* Panel interno en una sola columna */
+    grid-template-columns: 1fr;
+  }
+}

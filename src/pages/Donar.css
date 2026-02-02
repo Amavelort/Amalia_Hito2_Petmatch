@@ -1,0 +1,140 @@
+.donarM {
+  min-height: 100vh;
+}
+
+.donarM__container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.donarM__hero {
+  padding: 34px 0 28px;
+}
+
+/* Card principal (ajustada para que no haya “hueco” en desktop) */
+.donarM__card {
+  max-width: 860px;      /* evita el vacío en pantallas anchas */
+  margin: 0 auto;        /* centrada */
+  border-radius: 22px;
+  padding: 22px;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.10);
+  backdrop-filter: blur(10px);
+}
+
+.donarM__kicker {
+  margin: 0 0 10px;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-muted, rgba(0, 0, 0, 0.62));
+}
+
+.donarM__title {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 4.2vw, 44px);
+  line-height: 1.08;
+  color: var(--text, #0f172a);
+}
+
+.donarM__lead {
+  margin: 0 0 16px;
+  max-width: 100%;       
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-muted, rgba(0, 0, 0, 0.68));
+}
+
+/* Filas estilo Adopción */
+.donarM__rows {
+  display: grid;
+  gap: 12px;
+  margin: 16px 0 18px;
+}
+
+.donarM__row {
+  display: grid;
+  grid-template-columns: 44px 1fr;
+  gap: 12px;
+  align-items: center;
+
+  padding: 14px 14px;
+  border-radius: 16px;
+
+  background: rgba(255, 255, 255, 0.70);
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.donarM__rowIcon {
+  width: 38px;
+  height: 38px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+
+  /* fondo suave verdoso (como en inicio), icono verde */
+  background: rgba(24, 160, 120, 0.12);
+  border: 1px solid rgba(24, 160, 120, 0.18);
+}
+
+.donarM__rowIcon svg {
+  color: var(--brand-green, #18a078);
+  font-size: 16px;                   
+}
+
+.donarM__rowBody{
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.donarM__rowTitle {
+  margin: 0 0 2px;
+  font-weight: 800;
+  color: rgba(0, 0, 0, 0.80);
+  font-size: 14px;
+}
+
+.donarM__rowText {
+  margin: 0;
+  color: var(--text-muted, rgba(0, 0, 0, 0.64));
+  line-height: 1.45;
+  font-size: 14px;
+}
+
+/* CTA */
+.donarM__cta {
+  display: inline-grid;
+  gap: 8px;
+}
+
+.donarM__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.donarM__note {
+  margin: 0;
+  font-size: 13px;
+  color: var(--text-muted, rgba(0, 0, 0, 0.62));
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.donarM__heart {
+  color: var(--brand-yellow, #f3c64e);
+  transform: translateY(1px);
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .donarM__card {
+    max-width: 100%;
+    padding: 18px;
+  }
+}

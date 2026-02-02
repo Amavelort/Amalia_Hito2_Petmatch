@@ -1,0 +1,86 @@
+.footer {
+  margin-top: 48px;
+  padding: 24px 16px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(10px);
+}
+
+/*contenedor interno del footer*/
+.footer__inner { 
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/*Marca / nombre de la web*/
+.footer__brand {
+  margin: 0;
+  color: #2b2b2b;
+}
+
+/*contenedor de los links*/
+.footer__links {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 14px;
+  white-space: nowrap;
+}
+
+/*Estilo de los links*/
+.footer__links a {
+  text-decoration: none;
+  color: #2b2b2b;
+  opacity: 0.9;
+}
+
+.footer__links a:hover {
+  text-decoration: none;
+  border-bottom: 2px solid #F4B23A;
+  padding-bottom: 2px;
+}
+
+.footer__copy {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-top: 20px;
+  padding-top: 14px;
+}
+
+/*línea decorativa encima del texto, en este caso de copyright*/
+.footer__copy::before {
+  content: ""; /*elemento vacío necesario*/
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60%;
+  height: 1px;
+  background: rgba(0, 0, 0, 0.08);
+}
+
+@media (max-width: 640px) {
+  .footer__inner {
+    flex-direction: column; /*apila marca + links*/
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer__links {
+    flex-wrap: wrap; /*en móvil sí puede saltar de línea*/
+    white-space: normal; /*quitamos el “no romper línea”*/
+    gap: 10px 14px; /*fila/columna: queda ordenadito*/
+  }
+
+  .footer__copy {
+    margin-top: 16px;
+  }
+
+  .footer__copy::before {
+    width: 100%; /*en móvil la línea queda mejor a todo el ancho*/
+  }
+}

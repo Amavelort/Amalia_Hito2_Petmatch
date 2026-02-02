@@ -1,0 +1,169 @@
+.catcard {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.08);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.catcard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.12);
+}
+
+/*Contenedor imagen gato*/
+.catcard__media {
+  width: 100%; /*IMPORTANTE PARA QUE CUANDO LA HAGA RESPONSIVE NO SE CORTE LA IMAGEN*/
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: rgba(0, 0, 0, 0.03);
+}
+
+/*Imagen del gato*/
+.catcard__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/*Botón corazón*/
+.catcard__like {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 8px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(6px);
+  cursor: pointer;
+
+  font-weight: 700;
+  color: rgba(0, 0, 0, 0.8); /*Color general del texto del botón (el número)*/
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.catcard__like:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.10);
+}
+
+/*Icono corazón*/
+.catcard__heart {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: rgb(244, 120, 58); /*Color del trazo del corazón cuando NO está en estado liked*/
+}
+
+/*Estado "liked" del botón*/
+/* IMPORTANTE: aquí ya NO ponemos color amarillo, porque si no, también se pondría amarillo el número */
+.catcard__like.is-liked {
+  border-color: rgba(0, 0, 0, 0.18);
+}
+
+/*Cuando el botón está en estado liked, SOLO el corazón se pone amarillo*/
+.catcard__like.is-liked .catcard__heart {
+  color: #F4B23A;
+}
+
+/*Aseguramos que el número de likes siempre se vea en negro*/
+.catcard__count {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/*Cuerpo de la card*/
+.catcard__body {
+  padding: 14px 20px 18px;
+  display: grid;
+  gap: 10px;
+}
+
+/*Nombre del gato*/
+.catcard__title {
+  margin: 0;
+  font-size: 1.1rem;
+}
+
+/*Datos cortos del gato: edad, ubicación*/
+.catcard__info {
+  margin: 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+
+/*Descripción del gato*/
+.catcard__desc {
+  margin: 0;
+  color: rgba(0, 0, 0, 0.75);
+  font-size: 0.98rem;
+}
+
+/*Los siguientes botones, ya no los utilizo porque tengo el componente button*/
+/*.button_base {
+  border: 1px solid rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.03);
+  color: #2b2b2b;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.button_base:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+}
+
+.button_variant {
+  background: #2E9C7F;
+  color: #ffffff;
+  border: none;
+  transition: background 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+}
+
+.button_variant:hover{
+  background: #237A64;
+  transform: translateY(-1px);
+  box-shadow: 0 10px 18px rgba(0,0,0,0.10);
+}
+*/
+
+.catcard__cta {
+  /*Para que quede en la card como yo quiera: tamaño normal, alineado a la izquierda... */
+  width: auto;              /* en desktop no ocupa todo */
+  display: inline-flex;     /* se comporta como botón */
+  justify-content: center;  /* centra el texto */
+  align-self: flex-start;   /* lo deja alineado a la izquierda dentro del contenedor */
+  text-align: center;
+  padding-inline: 18px;     /* espacio a los lados del texto */
+}
+
+.catcard__profile { /*Contenedor botón "ver perfil"*/
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.grid .catcard__cta {
+  width: 100%;
+  display: flex;
+}
+
+@media (max-width: 768px) {
+  .catcard__cta {
+    width: 100%;          /* en móvil sí ocupa todo */
+    display: flex;        /* para que rellene bien el ancho */
+  }
+}
+
